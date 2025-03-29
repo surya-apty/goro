@@ -32,3 +32,9 @@ func (c *Context) BindJSON(dest any) error {
 	}
 	return json.Unmarshal(body, dest)
 }
+
+func (c *Context) HTML(code int, html string) {
+	c.Writer.Header().Set("Content-Type", "text/html; charset=utf-8")
+	c.Writer.WriteHeader(code)
+	c.Writer.Write([]byte(html))
+}
