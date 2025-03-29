@@ -13,6 +13,10 @@ func main() {
 
 	app.Static("/static", "./public")
 
+	app.Get("/", func(c *sdk.Context) {
+		c.HTML(200, "<h1>Hello, Goro!</h1><p>Visit <a href='/static'>/static</a> for static files.</p>")
+	})
+
 	api := app.Group("/api/v1")
 
 	api.Get("/hello", func(c *sdk.Context) {
