@@ -20,7 +20,7 @@ func main() {
 	api := app.Group("/api/v1")
 
 	api.Get("/hello", func(c *sdk.Context) {
-		c.JSON(200, map[string]string{"message": "Hello, world!"})
+		c.JSON(200, map[string]string{"message": "Hello, surya!"})
 	})
 
 	app.Listen(":8080")
